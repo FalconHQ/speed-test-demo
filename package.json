@@ -1,0 +1,40 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Demo site to show off h2-sever-push capabilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=demo_server nodemon server.js",
+    "pack": "webpack --watch --progress --color"
+  },
+  "keywords": [
+    "h2",
+    "server",
+    "http2",
+    "push",
+    "speed",
+    "test",
+    "demo",
+    "react"
+  ],
+  "author": "Elmarini <eva@lunamarini.com> (https://github.com/elmarini)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "debug": "^2.6.8",
+    "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.0.2",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0"
+  }
+}
