@@ -2,6 +2,7 @@ import React,{ Component } from 'react'
 import Iframe from './Iframe.jsx'
 import Chart from './Chart.jsx'
 
+
 class App extends Component {
     constructor(props) {
         super(props)
@@ -40,6 +41,7 @@ class App extends Component {
                 <h1>World </h1>
                 {iframeList}
                 <Chart data={this.state.data}/>
+                {/*<Bar data={chartData}  width="600" height="250"/>*/}
             </div>
         )
     }
