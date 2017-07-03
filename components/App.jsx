@@ -7,7 +7,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            urls: ['https://localhost:8080', 'https://localhost:8081'],
+            urls: ['https://h1.falconpush.io:8080', 'https://h2.falconpush.io:8081'],
             data: {
                 http1: 0,
                 http2: 0
