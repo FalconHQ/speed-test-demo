@@ -1,7 +1,6 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
 import Iframe from './Iframe.jsx'
 import Chart from './Chart.jsx'
-
 
 class App extends Component {
     constructor(props) {
@@ -14,7 +13,7 @@ class App extends Component {
             }
         }
 
-    this.msgHandler = this.msgHandler.bind(this);
+        this.msgHandler = this.msgHandler.bind(this);
 
     }
     componentDidMount() {
@@ -24,27 +23,29 @@ class App extends Component {
         window.removeEventListener('message', this.msgHandler, false);
     }
 
-    msgHandler (msgEvent) {
-        if(msgEvent.data.pageload) {
+    msgHandler(msgEvent) {
+        if (msgEvent.data.pageload) {
             console.log("data", msgEvent.data)
             let newData = Object.assign({}, this.state.data);
             newData[msgEvent.data.origin] = msgEvent.data.pageload;
-            this.setState({data: newData})
+            this.setState({ data: newData })
         }
     }
 
     render() {
-        let iframeList = this.state.urls.map((src, i) => <Iframe key={i} src={src} /> )
-        console.log("list", iframeList)
+        let iframeList = this.state.urls.map((src, i) => 
+            <Iframe key={i} src={src} /> )
         return (
-            <div> 
-                <h1>World </h1>
-                {iframeList}
-                <Chart data={this.state.data}/>
-                {/*<Bar data={chartData}  width="600" height="250"/>*/}
+            <div className="demo">
+                <h1>Speed Test </h1>
+                <div className="iframes-block">
+                    {iframeList}
+                </div>
+                <Chart data={this.state.data} />
             </div>
         )
     }
 }
 
 export default App;
+

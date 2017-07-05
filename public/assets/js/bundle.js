@@ -22635,16 +22635,19 @@ var App = function (_Component) {
             var iframeList = this.state.urls.map(function (src, i) {
                 return _react2.default.createElement(_Iframe2.default, { key: i, src: src });
             });
-            console.log("list", iframeList);
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'demo' },
                 _react2.default.createElement(
                     'h1',
                     null,
-                    'World '
+                    'Speed Test '
                 ),
-                iframeList,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'iframes-block' },
+                    iframeList
+                ),
                 _react2.default.createElement(_Chart2.default, { data: this.state.data })
             );
         }
@@ -22673,11 +22676,10 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Iframe = function Iframe(props) {
-    console.log("url", props.src);
     return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement("iframe", { src: props.src })
+        'div',
+        { className: 'iframeContainer' },
+        _react2.default.createElement('iframe', { className: 'iframe', src: props.src })
     );
 };
 
@@ -22707,9 +22709,9 @@ var getChartData = function getChartData(d1, d2) {
         labels: ["HTTP/1.1", "HTTP/2"],
         datasets: [{
             label: 'Speed in ms',
-            data: [d1, d2],
-            fillColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-            strokeColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)'],
+            data: [d1 + 200, d2],
+            fillColor: ['rgba(255, 10, 50, 0.5)', 'rgba(66, 33, 92, 0.5)'],
+            strokeColor: ['rgba(255,10,50,1)', 'rgba(66, 33, 92, 1)'],
             borderWidth: 1
         }]
     };
@@ -22720,7 +22722,7 @@ var Chart = function Chart(props) {
 
     return _react2.default.createElement(
         'div',
-        null,
+        { className: 'speed-chart' },
         _react2.default.createElement(_reactChartjs.Bar, { data: charData, width: 600, height: 400 })
     );
 };

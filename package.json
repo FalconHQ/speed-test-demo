@@ -36,6 +36,8 @@
     "css-loader": "^0.28.4",
     "debug": "^2.6.8",
     "extract-text-webpack-plugin": "^2.1.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
     "nodemon": "^1.11.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
