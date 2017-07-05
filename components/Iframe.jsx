@@ -1,10 +1,9 @@
 import React from 'react'
-
+        
 const Iframe = (props) => {
-    console.log("url", props.src)
     return (
-        <div> 
-            <iframe src={props.src} />
+        <div className='iframeContainer'> 
+            <iframe className='iframe' src={props.src} />
         </div>
     )
 }
