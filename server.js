@@ -5,9 +5,9 @@ const path = require('path')
 const debug = require('debug') ('demo_server')
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static("."))
+app.use(express.static("public"))
 
 https.createServer({
     key: fs.readFileSync('./certs/server.key'),
